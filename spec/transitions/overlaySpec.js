@@ -32,7 +32,7 @@ describe('Overlay', function(){
 
   it('should open overlay when directive element is clicked', function() {
     inject(function ($compile, $document, $rootScope, $rootElement) {
-      var morphable = $compile('<div><button ng-morph-overlay="settings"> Test </button></div>')($rootScope);
+      var morphable = $compile('<div><button ng-morph-overlay settings="settings"> Test </button></div>')($rootScope);
 
       $rootElement.append(morphable);
       angular.element($document[0].body).append($rootElement);
@@ -58,7 +58,7 @@ describe('Overlay', function(){
         }
       };
 
-      var morphable = $compile('<div><button ng-morph-overlay="settings"> Test </button></div>')($rootScope);
+      var morphable = $compile('<div><button ng-morph-overlay settings="settings"> Test </button></div>')($rootScope);
 
       $rootElement.append(morphable);
       angular.element($document[0].body).append($rootElement);
@@ -83,7 +83,7 @@ describe('Overlay', function(){
   // nested morphable tests
   it('should compile a template containing a nested overlay morphable', function () {
     inject(function ($compile, $document, $rootScope, $rootElement) {
-      var tplContainingMorphable = '<div style="background:black;display:block;"> <button ng-morph-overlay="nestedOverlaySettings"> Nested Morphable </button></div>';
+      var tplContainingMorphable = '<div style="background:black;display:block;"> <button ng-morph-overlay settings="nestedOverlaySettings"> Nested Morphable </button></div>';
       var nestedOverlayTpl = '<div id="nested-overlay" style="background:black;display:block;"> <span class="close-x">x</span></div>';
       
       $rootScope.overlaySettings = {
@@ -102,7 +102,7 @@ describe('Overlay', function(){
         }
       };
 
-      var morphable = $compile('<div><button ng-morph-overlay="overlaySettings"> Test </button></div>')($rootScope);
+      var morphable = $compile('<div><button ng-morph-overlay settings="overlaySettings"> Test </button></div>')($rootScope);
 
       $rootElement.append(morphable);
       angular.element($document[0].body).append($rootElement);
@@ -136,7 +136,7 @@ describe('Overlay', function(){
         }
       };
 
-      var morphable = $compile('<div><button ng-morph-overlay="overlaySettings"> Test </button></div>')($rootScope);
+      var morphable = $compile('<div><button ng-morph-overlay settings="overlaySettings"> Test </button></div>')($rootScope);
 
       $rootElement.append(morphable);
       angular.element($document[0].body).append($rootElement);
