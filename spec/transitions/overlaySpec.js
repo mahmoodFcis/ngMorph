@@ -18,7 +18,7 @@ describe('Overlay', function(){
   // basic overlay functionality tests
   it('should compile a template', function(){
     inject(function ($compile, $document, $rootScope, $rootElement) {
-      var morphable = $compile('<div><button ng-morph-overlay="settings"> Test </button></div>')($rootScope); 
+      var morphable = $compile('<div><button ng-morph-overlay settings="settings"> Test </button></div>')($rootScope); 
 
       $rootElement.append(morphable);
       angular.element($document[0].body).append($rootElement);
